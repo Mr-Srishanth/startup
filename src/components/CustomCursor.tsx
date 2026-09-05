@@ -46,7 +46,8 @@ export function CustomCursor() {
 
       circles.forEach((circle, index) => {
         if (!circle) return;
-        circle.style.transform = `translate(${x - 12}px, ${y - 12}px) scale(${(circles.length - index) / circles.length})`;
+        // translate3d forces GPU hardware acceleration, eliminating layout thrashing and jitter
+        circle.style.transform = `translate3d(${x - 12}px, ${y - 12}px, 0) scale(${(circles.length - index) / circles.length})`;
 
         circle.x = x;
         circle.y = y;

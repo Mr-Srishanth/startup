@@ -23,7 +23,7 @@ export function MonolithicMask() {
       <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
         
         {/* Cinematic Background Image (The layer we see through the text) */}
-        <motion.div style={{ scale: imageScale }} className="absolute inset-0">
+        <motion.div style={{ scale: imageScale }} className="absolute inset-0 will-change-transform">
           <img 
             src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2500&auto=format&fit=crop" 
             alt="Cinematic abstract" 
@@ -40,7 +40,7 @@ export function MonolithicMask() {
             opacity,
             transformOrigin: '50% 50%',
           }}
-          className="absolute inset-0 flex items-center justify-center bg-black mix-blend-multiply pointer-events-none"
+          className="absolute inset-0 flex items-center justify-center bg-black mix-blend-multiply pointer-events-none will-change-transform"
         >
           {/* 
             By using mix-blend-multiply, the black background stays solid black, 

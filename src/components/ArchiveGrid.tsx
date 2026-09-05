@@ -36,7 +36,7 @@ export function ArchiveGrid() {
         {/* The Strict Blueprint Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-white/10 relative z-10">
           {archiveProjects.map((project) => (
-            <motion.div style={{ skewY: skewVelocity }} key={project.id} className="origin-center">
+            <motion.div style={{ skewY: skewVelocity }} key={project.id} className="origin-center will-change-transform">
               <Link 
                 to={`/case-study/${project.slug}`} 
                 onMouseEnter={() => soundEngine.playImpact()}

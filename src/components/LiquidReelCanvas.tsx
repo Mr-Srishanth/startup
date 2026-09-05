@@ -67,7 +67,13 @@ export function LiquidReelCanvas({ imageUrl }: { imageUrl: string }) {
       onMouseMove={handleMouseMove}
     >
       <ErrorBoundary fallback={fallback}>
-        <Canvas orthographic camera={{ position: [0, 0, 1], zoom: 1 }} gl={{ antialias: false }}>
+        <Canvas 
+          orthographic 
+          camera={{ position: [0, 0, 1], zoom: 1 }} 
+          gl={{ antialias: false, powerPreference: "high-performance" }}
+          dpr={[1, 1.5]} // Caps pixel ratio on retina screens to prevent massive frame drops
+          performance={{ min: 0.5 }} // Gracefully degrades if GPU struggles
+        >
           <Suspense fallback={null}>
             <ReelMesh imageUrl={imageUrl} isHovered={isHovered} mousePos={mousePos} />
           </Suspense>
